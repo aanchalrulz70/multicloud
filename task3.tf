@@ -1,8 +1,6 @@
 provider "aws" {
   region  = "ap-south-1"
- access_key = "AKIASHL3LYOWHXSVCZPL"
-  secret_key = "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"
-
+ 
 profile="user_1"
 }
 # create vpc
@@ -186,23 +184,6 @@ resource "aws_security_group" "sg_allow_SSH" {
     Name = "sg_allow_ssh"
   
  }
-}
-# input for key name
-variable "enter_key_name" {
-                 type = string
-              }
-
-# create key pair
-resource "tls_private_key" "this" {
-  algorithm = "RSA"
-}
-resource "aws_key_pair"   "deployer" {
-  key_name   = var.enter_key_name
-  public_key = tls_private_key.this.public_key_openssh
-}
-// print key
-output "keyout" {
-   value=aws_key_pair.deployer. key_name
 }
 # wp-ec2
 resource "aws_instance" "wp-task" {
