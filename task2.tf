@@ -113,7 +113,7 @@ resource "null_resource" "null-remote-1"  {
       inline = [
         "sudo echo ${aws_efs_file_system.allow_nfs.dns_name}:/var/www/html efs defaults,_netdev 0 0 >> sudo /etc/fstab",
         "sudo mount  ${aws_efs_file_system.allow_nfs.dns_name}:/  /var/www/html",
-        "sudo curl https://raw.githubusercontent.com/Gaurav630314/hybridtask2/master/index.html > index.html",                                  "sudo cp index.html  /var/www/html/",
+        "sudo curl https://raw.githubusercontent.com/Aanchal630314/hybridtask2/master/index.html > index.html",                                  "sudo cp index.html  /var/www/html/",
       ]
   }
 }
