@@ -1,6 +1,6 @@
 provider "aws" {
   region  = "ap-south-1"
-  profile = "lwprofile"
+  profile = "askuser"
 }
 
 resource "tls_private_key" "task-4-pri-key" { 
